@@ -1,0 +1,592 @@
+@import "../variable/variable";
+@import "../mixin/font";
+@import "../mixin/line-limit";
+@import "../mixin/overlay";
+
+// trending top category part
+.trending-top-category {
+  background-color: $gray;
+  padding: 6px 16px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+
+  span {
+    margin-right: 10px;
+  }
+
+  a {
+    background-color: $white;
+    border-radius: 3px;
+    padding: 2px 6px;
+    color: $black;
+    border: 1px solid $border;
+    transition: all linear .2s;
+
+    &:hover {
+      background-color: $black;
+      color: $white;
+      border-color: $black;
+    }
+  }
+}
+
+// left text right image widget part
+.left-text-right-image-widget {
+  .image {
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+
+    .overlay {
+      @include overlay();
+    }
+  }
+
+  .text {
+    h1 {
+      @include line_limit(3);
+    }
+
+    p {
+      @include line_limit(3);
+      margin-top: 8px;
+    }
+  }
+
+  &:hover {
+    .image {
+      .overlay {
+        opacity: 1;
+      }
+    }
+
+    .text {
+      h1 {
+        color: $themeColor;
+      }
+    }
+  }
+}
+
+// top image bottom text widget part
+.top-image-btm-text-widget {
+  .image {
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+
+    .overlay {
+      @include overlay()
+    }
+  }
+
+  .text {
+    margin-top: 14px;
+
+    h3 {
+      color: $black
+    }
+
+    h4 {
+      @include line_limit(2);
+    }
+
+    h2 {
+      @include line_limit(2);
+    }
+
+    p {
+      margin-top: 10px;
+      @include line_limit(2);
+    }
+  }
+
+  &:hover {
+    .play-for-big {
+      i {
+        background-color: $white;
+        color: $black;
+      }
+    }
+
+    .image {
+      .overlay {
+        opacity: 1;
+      }
+    }
+
+    .text {
+
+      h4,
+      h3,
+      h2 {
+        color: $themeColor;
+      }
+    }
+  }
+}
+
+// small news widget
+.small-news-widget {
+  .image {
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  &:hover {
+    .image {
+      i {
+        background-color: $white;
+        color: $black;
+      }
+    }
+  }
+
+  .text {
+    h4 {
+      @include line_limit(2);
+      line-height: 26px;
+    }
+
+    p {
+      margin-top: 4px;
+
+      i {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &:hover {
+    .text {
+      h4 {
+        color: $themeColor;
+      }
+    }
+  }
+}
+
+.small-news-widget+.small-news-widget {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid $border;
+}
+
+// only title and description widget
+.only-title-and-des-widget {
+  h4 {
+    @include line_limit(2);
+  }
+
+  p {
+    margin-top: 10px;
+    @include line_limit(2);
+  }
+
+  &:hover {
+    h4 {
+      color: $themeColor;
+    }
+  }
+}
+
+// wrapping content widget part
+.wrapping-content-widget {
+  .main-content {
+    background-color: $gray;
+    padding: 14px;
+  }
+}
+
+// top image bottom text bg widget
+.top-image-btm-text-bg-widget {
+  background-color: $white;
+  overflow: hidden;
+  border-radius: 5px;
+
+  .image {
+    position: relative;
+
+    .overlay {
+      @include overlay();
+    }
+  }
+
+  .text {
+    padding: 14px;
+    min-height: 114px;
+
+    h4 {
+      @include line_limit(3);
+    }
+  }
+
+  &:hover {
+    .text {
+      h4 {
+        color: $themeColor;
+      }
+    }
+
+    .overlay {
+      opacity: 1;
+    }
+  }
+}
+
+// left sidebar widget with small news
+.left-sidebar-widget-with-sm-news {
+  border: 1px solid $border;
+  padding: 14px;
+  position: relative;
+  top: 24px;
+
+  .top-title {
+    background-color: $gray;
+    padding: 4px 20px;
+    width: 90%;
+    margin: 0 auto;
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid $border;
+
+    h4 {
+      &:hover {
+        color: $themeColor;
+      }
+    }
+  }
+
+  .news-list {
+    padding-top: 20px;
+  }
+}
+
+// video widget with video slider 
+.video-widget-with-slider {
+  .video-widget-main {
+    background-color: $black;
+    padding: 14px;
+    margin-top: 24px;
+
+    .video-item {
+      margin-bottom: 16px;
+
+      .image {
+        position: relative;
+        overflow: hidden;
+        border-radius: 5px;
+        border: 1px solid $white;
+
+        .minute {
+          position: absolute;
+          bottom: 6px;
+          left: 6px;
+
+          h6 {
+            @include font(16px, 500);
+            color: $white;
+
+            i {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .image {
+          .play-for-big {
+            i {
+              background-color: $white;
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+
+    .video-slider-widget {
+      padding: 0 6px;
+      margin-bottom: 16px;
+      overflow: hidden !important;
+
+      .video-item {
+        margin: 0 8px;
+      }
+
+      .icon {
+        width: 35px;
+        height: 35px;
+        background-color: #C30909;
+        text-align: center;
+        line-height: 35px;
+        border-radius: 2px;
+        font-size: 14px;
+        color: $white;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 9;
+        cursor: pointer;
+      }
+
+      .icon.left {
+        left: 0;
+      }
+
+      .icon.right {
+        left: calc(100% - 33px);
+      }
+    }
+  }
+}
+
+// comments widget
+.comments-widget {
+  .comments-widget-item {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border: 4px solid $gray;
+    border-top: 0;
+
+    .small-news-widget {
+      padding: 0 16px;
+      padding-top: 14px;
+    }
+  }
+}
+
+// news image with overlay title
+.news-image-with-overlay-title {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+
+  .overlay {
+    @include overlay();
+  }
+
+  .text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+
+    h3 {
+      padding: 20px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0), #000);
+      width: 100%;
+    }
+
+    h4 {
+      padding: 14px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0), #000);
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    .overlay {
+      opacity: 1;
+    }
+
+    .text {
+      h3 {
+        color: $themeColor;
+      }
+
+      h4 {
+        color: $themeColor !important;
+      }
+    }
+  }
+}
+
+// left image right text widget
+.left-image-right-text-widget {
+  .image {
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+
+    .overlay {
+      @include overlay();
+    }
+  }
+
+  .text {
+    h3 {
+      color: $black;
+    }
+
+    p {
+      margin-top: 6px;
+    }
+
+    .minute {
+      margin-top: 18px;
+
+      h6 {
+        @include font(18px, 500);
+        color: $paragraph;
+
+        i {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &:hover {
+
+    .play-for-big {
+      i {
+        background-color: $white;
+        color: $black;
+      }
+    }
+
+    .image {
+      .overlay {
+        opacity: 1;
+      }
+    }
+
+    .text {
+      h3 {
+        color: $themeColor;
+      }
+    }
+  }
+}
+
+// image slider widget
+.image-background-widget {
+  background-color: $black;
+  padding: 20px;
+  border-radius: 5px;
+
+  .image {
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+
+    i {
+      color: $black;
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      color: $white;
+      font-size: 24px;
+    }
+  }
+}
+
+.image-background-slider {
+  .slider-item {
+    .image {
+      position: relative;
+
+      .overlay {
+        @include overlay();
+      }
+
+      &:hover {
+        .overlay {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .icon {
+    width: 35px;
+    height: 35px;
+    background-color: #C30909;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: $white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9;
+    cursor: pointer;
+  }
+
+  .icon.left {
+    left: 30px;
+  }
+
+  .icon.right {
+    right: 30px;
+  }
+}
+
+.left-image-right-text-with-bg-widget {
+  background-color: $white;
+  padding: 17px 14px;
+  border-radius: 3px;
+
+  .image {
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+
+    i {
+      color: $black;
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      color: $white;
+      font-size: 20px;
+    }
+  }
+
+  &:hover {
+    .text {
+      h4 {
+        color: $themeColor;
+      }
+    }
+  }
+}
+
+// image with multiple text
+.image-width-multiple-text {
+  .news-image-with-overlay-title {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  ul {
+    min-height: 248px;
+    border: 1px solid $border;
+    border-top: 0;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    padding-top: 5px;
+
+    li {
+      padding: 4px 14px;
+
+      &:hover {
+        h4 {
+          color: $themeColor;
+        }
+      }
+    }
+
+    li+li {
+      border-top: 1px solid $border;
+    }
+  }
+}

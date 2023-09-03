@@ -1,0 +1,233 @@
+@import "../variable/variable";
+@import "../mixin/font";
+
+footer {
+  padding-top: 80px;
+
+  .footer-bg {
+    background-color: $black;
+    padding: 40px 0;
+
+    .left-info {
+      .footer-menu {
+        margin-top: 30px;
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+
+          li {
+            width: 25%;
+            margin-bottom: 8px;
+
+            a {
+              @include font(20px, 500);
+              color: $white;
+              transition: all linear .2s;
+
+              &:hover {
+                color: $themeColor;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    .editor {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+
+      .text {
+        width: 50%;
+
+        p {
+          @include font(20px, 500);
+          color: $white;
+        }
+      }
+    }
+
+    .right-info {
+      width: 100%;
+      background-color: #3f3f3f;
+      padding: 40px;
+
+      .follow {
+        h4 {
+          @include font(18px, 600);
+          color: $white;
+          text-transform: uppercase;
+        }
+
+        ul {
+          margin-top: 20px;
+
+          li {
+            display: inline-block;
+            margin-right: 4px;
+
+            a {
+              width: 35px;
+              height: 35px;
+              border-radius: 2px;
+              text-align: center;
+              line-height: 35px;
+              color: $white;
+              font-size: 14px;
+            }
+
+            &:first-child {
+              a {
+                background-color: #3B5998;
+              }
+            }
+
+            &:nth-child(2) {
+              a {
+                background-color: #1DA1F2;
+              }
+            }
+
+            &:nth-child(3) {
+              a {
+                background-color: #0A66C2;
+              }
+            }
+
+            &:nth-child(4) {
+              a {
+                background-color: #C32AA3;
+              }
+            }
+
+            &:nth-child(5) {
+              a {
+                background-color: #FF0000;
+              }
+            }
+          }
+        }
+      }
+
+      .store-logo {
+        margin-top: 24px;
+      }
+    }
+
+    .footer-address {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid #fff;
+
+      p {
+        color: $white;
+        @include font(20px, 500);
+      }
+
+      h6 {
+        color: $white;
+        @include font(22px, 600);
+        margin-top: 14px;
+      }
+
+      ul {
+        li {
+          color: $white;
+          @include font(20px, 500);
+
+          a {
+            color: $white;
+
+            &:hover {
+              color: $themeColor;
+            }
+          }
+
+          a.mail {
+            @include font(16px, 400);
+            font-family: 'Open Sans', sans-serif;
+          }
+        }
+      }
+    }
+
+    .developed {
+      ul {
+        margin-bottom: 40px;
+
+        li {
+          display: inline-block;
+          margin-right: 14px;
+
+          a {
+            @include font(14px, 600);
+            text-transform: uppercase;
+            font-family: 'Open Sans', sans-serif;
+            position: relative;
+            padding-left: 12px;
+
+            &::before {
+              width: 7px;
+              height: 7px;
+              background-color: $white;
+              border-radius: 50%;
+              position: absolute;
+              top: 8px;
+              left: 0;
+              content: "";
+            }
+          }
+        }
+      }
+
+      p {
+        @include font(16px, 400);
+        font-family: 'Open Sans', sans-serif;
+
+        a {
+          color: $themeColor;
+        }
+      }
+    }
+  }
+}
+
+#button {
+  display: inline-block;
+  background-color: $themeColor;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  color: $black;
+  text-align: center;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s,
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 18px;
+  z-index: 1000;
+  cursor: pointer;
+  animation: updown 2s linear infinite alternate;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-30px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}

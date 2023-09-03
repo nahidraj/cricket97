@@ -1,0 +1,190 @@
+@import "../variable/variable";
+@import "../mixin/font";
+
+
+// header part start
+header {
+  padding: 20px 0;
+
+  .left-info {
+    .quick-action {
+      .bars {
+        width: 35px;
+        height: 35px;
+        background-color: $gray;
+        text-align: center;
+        line-height: 35px;
+        border-radius: 2px;
+        cursor: pointer;
+        border: 1px solid $border;
+        transition: all linear .2s;
+        font-size: 15px;
+
+        &:hover {
+          background-color: $themeColor;
+          border-color: $themeColor;
+          color: $white;
+        }
+      }
+
+      .sidebar-menu {
+        transform: translateX(-100%);
+        transition: all 0.3s ease 0s;
+        width: 240px;
+        height: 100vh;
+        overflow-y: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        background-color: #f2f2f2;
+        box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.3);
+
+        .close-menu {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 40px;
+          height: 40px;
+          background-color: $themeColor;
+          text-align: center;
+          line-height: 40px;
+          font-size: 16px;
+          cursor: pointer;
+          transition: all linear .2s;
+
+          &:hover {
+            background-color: $black;
+            color: $white;
+          }
+        }
+
+        ul {
+          margin-top: 40px;
+
+          li {
+            a {
+              @include font(20px, 500);
+              color: $black;
+              line-height: 24px;
+              transition: all linear .2s;
+              display: block;
+              padding: 8px 24px;
+              border-bottom: 1px solid #ddd;
+
+              i {
+                font-size: 16px;
+              }
+
+              &:hover {
+                color: $themeColor;
+              }
+            }
+          }
+        }
+      }
+
+      .show-sidebar-menu {
+        transform: translateX(0);
+      }
+
+      .search {
+        width: 35px;
+        height: 35px;
+        background-color: $gray;
+        text-align: center;
+        line-height: 35px;
+        border-radius: 2px;
+        cursor: pointer;
+        border: 1px solid $border;
+        margin-left: 5px;
+        transition: all linear .2s;
+        font-size: 15px;
+
+        &:hover {
+          background-color: $themeColor;
+          border-color: $themeColor;
+          color: $white;
+        }
+      }
+
+      .language {
+        margin-left: 5px;
+
+        .nice-select {
+          background-color: $themeColor;
+          border-radius: 2px;
+          border: solid 1px $themeColor;
+          height: 35px;
+          line-height: 35px;
+          color: $white;
+          @include font(14px, 600);
+          width: 100px;
+
+          &::after {
+            border-bottom: 2px solid $white;
+            border-right: 2px solid $white;
+            height: 7px;
+            margin-top: -4px;
+            width: 7px;
+          }
+
+          .option {
+            line-height: 35px;
+            min-height: 35px;
+            color: $black;
+          }
+        }
+      }
+    }
+
+    .dates {
+      margin-top: 14px;
+    }
+  }
+
+  .right-info {
+    .social-icon {
+      a {
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border: 1px solid $border;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        color: $black;
+        font-size: 12px;
+        transition: all linear .2s;
+        margin-left: 3px;
+
+        &:hover {
+          background-color: $themeColor;
+          border-color: $themeColor;
+          color: $white;
+        }
+      }
+    }
+
+    .shortcut-btn {
+      margin-top: 14px;
+
+      a {
+        background-color: $gray;
+        border-radius: 2px;
+        @include font(17px, 500);
+        padding: 2px 12px;
+        color: $black;
+        border: 1px solid $border;
+        margin-left: 3px;
+        transition: all linear .2s;
+
+        &:hover {
+          background-color: $black;
+          color: $white;
+          border-color: $black;
+        }
+      }
+    }
+  }
+}
