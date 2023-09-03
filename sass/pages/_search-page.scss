@@ -1,0 +1,76 @@
+@import "../variable/variable";
+@import "../mixin/font";
+
+.search-news-here {
+  padding: 14px;
+  background-color: $gray;
+  border: 1px solid $border;
+
+  .input-groups {
+    input {
+      border: 1px solid $border;
+      border-radius: 0;
+      background-color: $white;
+    }
+
+    i {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 38px;
+      height: 38px;
+      background-color: #EEEEEE;
+      text-align: center;
+      line-height: 38px;
+      border: 1px solid $border;
+    }
+  }
+
+  .date-input {
+    input {
+      padding-right: 50px;
+    }
+  }
+
+  .submit {
+    background-color: rgb(221, 5, 5);
+    border: 0;
+    color: $white;
+    @include font(14px, 600);
+    text-transform: uppercase;
+    width: 100%;
+    height: 36px;
+  }
+}
+
+.news-previous-and-next {
+  margin-top: 40px;
+
+  ul {
+    li {
+      color: $black;
+      background-color: $gray;
+      padding: 8px 16px;
+      border-radius: 4px;
+      color: $black;
+      @include font(14px, 500);
+      display: inline-block;
+      text-align: center;
+      margin: 0 2px;
+
+      i {
+        font-size: 12px;
+      }
+
+      a {
+        color: $black;
+        background-color: $gray;
+        color: rgb(59, 59, 255);
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -204,3 +204,12 @@ body {
 }
 
 // minute part start
+
+// global date part
+.global-date{
+  @include font(16px, 500);
+  color: $paragraph;
+  i{
+    font-size: 12px;
+  }
+}
