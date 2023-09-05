@@ -6,6 +6,8 @@
 }
 
 .upper-news-title {
+  margin-top: 24px;
+
   .top-news-title {
     @include font(28px, 700);
     color: $themeColor;
@@ -45,12 +47,14 @@
     }
   }
 }
+
 .category-wise-news-list-main {
   .left-image-right-text-widget {
     border-bottom: 1px solid $border;
     padding-bottom: 12px;
     margin-bottom: 12px;
-    p{
+
+    p {
       text-align: justify;
     }
 

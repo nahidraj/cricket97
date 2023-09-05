@@ -182,6 +182,7 @@
 
         p {
           color: $black;
+          margin-bottom: 0;
         }
       }
     }
@@ -312,7 +313,7 @@
 
   .text {
     background-color: $gray;
-    padding: 20px;
+    padding: 12px;
 
     h4 {
       margin-bottom: 10px;
